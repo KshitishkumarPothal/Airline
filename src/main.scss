@@ -1,0 +1,356 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;600;800&family=Poppins:ital,wght@0,300;0,400;0,500;0,800;1,300;1,500;1,600;1,900&family=Roboto:ital,wght@0,100;0,900;1,400;1,500;1,700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+:root{
+    --PrimaryColor: hsl(225,50%,48%);
+    --SecondaryColor: hsl(180, 85%, 87%);
+    --ColorOne: hsl(15,74%,70%);
+    --ColorTwo: hsl(28,100%,82%);
+    --HoverColor: hsl(225,56%,59%);
+    --WhiteColor: hsl(0,0%,100%);
+    --BlackColor: hsl(0, 0%, 4%);
+
+
+    --TextColor: hsl(240,1%,48%);
+    --borderColor: hsl(0,0%,83%);
+    --whiteColorDeam: hsl(0,0%,93%);
+    --greyBg:hsl(0, 0%, 96%);
+    --greyText: hsl(145, 45%, 45%);
+    --inputColor: hsl(, 145%, 145%);
+    --boxShadow: box-shadow: rgba(0,0,0,0.1) 0px 10px 15px -3px, rgba(0,0,0,0.05) 0px 4px 6px -2px;
+    --transition:.4s ease-in-out;
+}
+body{
+    background: var(--WhiteColor);
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+    cursor: pointer;
+}
+.section{
+    padding: 4rem 0 2rem;
+}
+.container{
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+
+}
+.icon{
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+.flex{
+    display: flex;
+    align-items: center;
+}
+.grid{
+    display: grid;
+    align-items: center;
+}
+.none{
+    display: none;
+}
+.btn{
+    padding: 0.7rem 1.5rem; 
+    background: var(--PrimaryColor);
+    border: none;
+    outline: none;
+    border-radius:3rem;
+    cursor: pointer;
+    color: var(--WhiteColor);
+
+    a{
+        color: var(--WhiteColor);
+        font-weight: 500;
+    }
+    &:hover{
+        background: var(--HoverColor);
+    }
+}
+img, video{
+    width: 100%;
+    height: auto;
+}
+input{
+    font-size: 100%;
+    color: var(--greyText);
+
+}
+p{
+    font-size: 13px;
+    color: var(--greyText);
+    line-height: 22px;
+}
+h4{
+    padding: 1rem 0;
+    font-weight: 700;
+    color: var(--BlackColor);
+
+}
+h2{
+    font-size: 25px;
+    padding: 1rem;
+    color: var(--BlackColor);
+}
+
+
+//navbar style
+
+.navBar{
+    position: fixed;
+    flex-direction: column;
+    width: 100%;
+    z-index: 1000;
+
+    .navBarOne, .navBarTwo{
+        justify-content: space-between;
+        padding: 1rem;
+        width: 100%;
+    
+    }
+    .navBarOne{
+        background: var(--SecondaryColor);
+
+        .icon:hover{
+            color: var(--PrimaryColor);
+        }
+        .atb{
+            gap: 1rem;
+            span{
+                color: var(--BlackColor);
+                font-size: 13px;
+                cursor: pointer;
+
+                &:hover{
+                    color: var(--PrimaryColor);
+                    font-size: 700;
+                }
+            }
+        }
+    
+    }
+
+    .navBarTwo{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        top: 3rem;
+        padding: 1.5rem 1rem;
+        position: fixed;
+        transition: .3s ease-in-out;
+
+
+        .logoDiv{
+
+            .logo{
+                width: 40%;
+            }
+        }
+
+        @media screen and (max-width:768px) {
+            .navBarMenu{
+                position: absolute;
+                background: var(--SecondaryColor);
+                padding: 1.5rem;
+                border-radius: 10px;
+                top: 5rem;
+                right: -50%;
+                width: 80%;
+                transform: translateX(50%);
+                z-index: 2000;
+                box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+                border: 3px solid var(--WhiteColor);
+                transition: .4s ease-in-out;
+
+                .menu{
+                    flex-direction: column;
+                    gap: .5rem;
+                    text-align: center;
+
+                    .listItem{
+                        padding: .5rem 0;
+                        cursor: pointer;
+                        color: var(--BlackColor);
+
+                        &:hover{
+                            color: var(--PrimaryColor);
+                            font-weight: 600;
+                        }
+                    }
+                }
+
+                .btnOne{
+                    display: block;
+                    justify-content: center;
+                    margin: auto;
+                    margin-top: 1rem;
+                }
+            }
+            .btnTwo{
+                display: none;
+            }
+            
+        }
+        .toggleIcon{
+            .icon{
+                font-size: 30px;
+                color: var(--BlackColor);
+            }
+
+        }
+        .showNavbar{
+            right: 50%;
+            transition: .5s ease-in-out;
+        }
+
+    }
+
+    .navbarWithBg{
+        background: var(--SecondaryColor);
+        padding: .5rem 1rem;
+        box-shadow: rgba(0,0,0,0.1) 0px 10px 15px -3px, rgba(0,0,0,0.05) 0px 4px 6px -2px;
+    }
+
+}
+
+// home section styling
+
+.home{
+    padding-top: 10rem;
+    text-align: center;
+    gap: 2rem;
+    flex-direction: column;
+
+    
+    .mainText{
+        color: var(--BlackColor);
+        font-size: 15px;
+        line-height: 2.5rem;
+
+    }
+    .homeImage{
+        width: 100%;
+        margin: 1rem auto 0;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        border-radius: 5rem;
+
+        .videoDiv{
+            width: 90%;
+            .video{
+                border-radius: 40%;
+                
+            }
+        }
+        .plane{
+            position: absolute;
+            width: 100%;
+            top: -25%;
+        }
+
+    }
+}
+
+.search{
+    .sectionContainer{
+        width: 100%;
+        padding: 1.5rem;
+        border: 2px solid var(--greyBg);
+        border-radius: 16px;
+        row-gap: 2rem;
+
+        .btns{
+            background: var(--SecondaryColor);
+            padding: .5rem;
+            border-radius: 1rem;
+            flex-direction: column;
+            margin: auto;
+            width: 100%;
+            cursor: pointer;
+
+            .singleBtn{
+                padding: .8rem 1.5rem;
+                font-size: 15px;
+                border-radius: 3rem;
+                width: 20%;
+                text-align: center;
+
+                &:hover{
+                    background: var(--PrimaryColor);
+                    color: var(--WhiteColor);
+                    font-weight: 500;
+                    transition: .4s ease;
+                }
+
+            }
+
+            .active{
+                background: var(--PrimaryColor);
+                    color: var(--WhiteColor);
+                    font-weight: 600;
+
+            }
+        }
+        .searchInputs{
+            width: 100%;
+            justify-content: center;
+            flex-direction: column;
+            gap: 1.5rem;
+
+            .singleInput{
+
+                .iconDiv{
+                    padding: 16px 10px;
+                    border-radius: 3rem;
+                    background: var(--SecondaryColor);
+                    margin-right: 1rem;
+
+                    .icon{
+                        color: var(--BlackColor);
+                        opacity: .7;
+
+                        &:hover{
+                            opacity: 1;
+                            transform: scale(1.2);
+                            
+                        }
+                    }
+                }
+                    .texts{
+                        h4{
+                            padding-top: 0;
+                            padding-bottom: 0.7rem;
+                            color: var(--BlackColor);
+                            font-weight: 700;
+                        }
+
+
+                        input{
+                            width: 95%;
+                            border: none;
+                            outline: none;
+                            background: transparent;
+
+                            &::placeholder{
+                                font-size: 13px;
+                                opacity: .9;
+                            }
+                        }
+                    }
+                
+            }
+            
+        }
+    }
+}
